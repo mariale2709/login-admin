@@ -7,7 +7,7 @@ const Navbar = (props) => {
     const cerrarSesion = () => {
         auth.signOut()
             .then(() =>{
-                props.history.push('/login')
+                props.history.push('/')
             })
     }
     return (
@@ -15,9 +15,6 @@ const Navbar = (props) => {
             <Link className="navbar-brand" to="/">Login Admin</Link>
                 <div>
                     <div className="d-flex">
-                        <NavLink className="btn btn-dark mr-2" to="/" exact>
-                        Home
-                        </NavLink>
                         {
                             props.firebaseUser !== null ? (
                                 <NavLink className="btn btn-dark mr-2"  to="/admin">
@@ -31,11 +28,7 @@ const Navbar = (props) => {
                                 className="btn btn-dark"
                                 onClick={() => cerrarSesion()}>
                                 Cerrar Secion</button>
-                            ): (
-                                <NavLink className="btn btn-dark" to="/login">
-                                Login
-                                </NavLink>
-                                )
+                            ): null
                         }
                         
                     </div>

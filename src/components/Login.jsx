@@ -7,7 +7,7 @@ const Login = (props) => {
     const [email, setEmail]= React.useState('')
     const [pass, setPass]= React.useState('')
     const [error, setError]= React.useState(null)
-    const [esRegistro, setEsRegistro] = React.useState(true)
+    const [esRegistro, setEsRegistro] = React.useState(false)
 
     const procesarDatos = (e) =>{
         e.preventDefault()
@@ -127,6 +127,18 @@ const Login = (props) => {
                          onClick={() => setEsRegistro(!esRegistro)}>
                             {esRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
                         </button>
+                        {
+                            !esRegistro ? ( 
+                                <button 
+                                    className="btn btn-sm btn-info btn-danger btn-block"
+                                    type="button"
+                                    onClick={() => props.history.push('/reset')}
+                                >
+                                    Recuperar contraseña
+                                </button>
+
+                            ): null
+                        }
                     </form>
                 </div>
             </div>
