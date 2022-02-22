@@ -12,7 +12,7 @@ const Navbar = (props) => {
     }
     return (
         <div className="navbar navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">Login Admin</Link>
+            <Link className="navbar-brand" to="/">Administrative System</Link>
                 <div>
                     <div className="d-flex">
                         {
